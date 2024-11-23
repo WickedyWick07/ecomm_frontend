@@ -12,7 +12,7 @@ function Home(){
     const{addToCart} = useContext(CartContext)
     const navigate = useNavigate()
     const [featuredProducts, setFeaturedProducts] = useState([])
-    const API_URL = 'http://localhost:8000/api'
+    const API_URL = import.meta.env.VITE_API_URL
     useEffect(() => {
 
         const fetchProducts = async () => {

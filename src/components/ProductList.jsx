@@ -17,15 +17,14 @@ const ProductList = () => {
 
     const { addToCart, cart, fetchCart } = useContext(CartContext);
     const [cartItemCount, setCartItemCount] = useState(0);
-    const API_URL = 'http://localhost:8000/api/products/';
     const [searchQuery, setSearchQuery] = useState("");
     const navigate = useNavigate();
 
-    const fetchProducts = async (url = API_URL) => {
+    const fetchProducts = async () => {
         setLoading(true);
         setIsSearching(false);
         try {
-            const response = await api.get(url, {
+            const response = await api.get(`${import.meta.env.VITE_API_URL}/products`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 },
