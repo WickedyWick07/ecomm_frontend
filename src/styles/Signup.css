@@ -1,0 +1,29 @@
+.signup-container {
+    max-width: 300px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-container input[type="email"],
+.signup-container input[type="text"],
+.signup-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.signup-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+}

@@ -1,0 +1,32 @@
+.form-container {
+    max-width: 300px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.register-link {
+    text-align: center;
+}
