@@ -8,7 +8,7 @@
         "headers": [
           {
             "key": "Access-Control-Allow-Origin",
-            "value": "ecomm_frontend.vercel.app"
+            "value": "https://ecomm-frontend-eosin.vercel.app"
           },
           {
             "key": "Access-Control-Allow-Methods",
