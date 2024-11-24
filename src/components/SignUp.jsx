@@ -49,7 +49,7 @@ const Signup = () => {
                     setMessage("Error creating user.");
                 }
             } else if (error.request) {
-                setMessage("Network error. Please try again later.");
+                setMessage("Network error. Please try again later...");
             } else {
                 setMessage("Unknown error occurred.");
             }
