@@ -24,7 +24,7 @@ const ProductList = () => {
         setLoading(true);
         setIsSearching(false);
         try {
-            const response = await api.get(`${import.meta.env.VITE_API_URL}/products`, {
+            const response = await api.get(`${import.meta.env.VITE_API_URL}/api/products`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 },

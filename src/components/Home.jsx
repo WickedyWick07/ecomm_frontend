@@ -13,11 +13,12 @@ function Home(){
     const navigate = useNavigate()
     const [featuredProducts, setFeaturedProducts] = useState([])
     const API_URL = import.meta.env.VITE_API_URL
+    const imageURL = ''
     useEffect(() => {
 
         const fetchProducts = async () => {
             try {
-                const response = await axios.get(`${API_URL}/products/`);
+                const response = await axios.get(`${API_URL}/api/products/`);
                 console.log(response.data)
                 setFeaturedProducts(response.data.results)
                 
@@ -96,7 +97,7 @@ function Home(){
                             featuredProducts.map(product => (
                                 <div key={product.id} className="product-card">
                                     <img 
-                                    src={`${import.meta.env.VITE_API_URL}/products${product.image}`}
+                                    src={`${import.meta.env.VITE_API_URL}/${product.image}`}
                                     alt={product.name} 
                                     style={{
                                         width: '100%',

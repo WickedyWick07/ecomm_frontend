@@ -17,7 +17,7 @@ function ProductDetail() {
 
   const fetchDetails = async () => {
     try {
-      const response = await api.get(`products/${pk}/`, {
+      const response = await api.get(`api/products/${pk}/`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -73,7 +73,7 @@ function ProductDetail() {
           {product.image && (
             <img
               className="product__image"
-              src={`http://localhost:8000${product.image}`}
+              src={`${import.meta.env.VITE_API_URL}/${product.image}`}
               alt={product.name}
             />
           )}
