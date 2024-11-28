@@ -97,7 +97,7 @@ function Home(){
                             featuredProducts.map(product => (
                                 <div key={product.id} className="product-card">
                                     <img 
-                                    src={`${import.meta.env.VITE_API_URL}/${product.image}`}
+                                    src={`${import.meta.env.VITE_API_URL}${product.image}`}
                                     alt={product.name} 
                                     style={{
                                         width: '100%',
