@@ -173,7 +173,7 @@ const ProductList = () => {
                             <h2>{product.name}</h2>
                             {product.image && (
                                 <img
-                                    src={`http://localhost:8000${product.image}`}
+                                    src={`${import.meta.env.VITE_API_URL}/products/${product.image}`}
                                     alt={product.name}
                                 />
                             )}
