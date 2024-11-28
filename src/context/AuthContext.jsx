@@ -38,7 +38,7 @@ const AuthProvider = ({ children }) => {
 
   const login = async (username, password) => {
     try {
-      const response = await api.post('/auth/login/', { username, password });
+      const response = await api.post('api/auth/login/', { username, password });
       console.log("Full login response:", response);
       if (response.data && response.data.key) {
         setToken(response.data.key);
@@ -69,7 +69,7 @@ const AuthProvider = ({ children }) => {
   const logout = async () => {
     try {
       const refreshToken = localStorage.getItem('refreshToken');
-      await api.post('/auth/logout/', { refresh_token: refreshToken });
+      await api.post('api/auth/logout/', { refresh_token: refreshToken });
     } catch (error) {
       console.error('Logout error', error);
     } finally {

@@ -29,7 +29,7 @@ const Signup = () => {
         }
 
         try {
-            const response = await api.post(`auth/registration/`, {
+            const response = await api.post(`api/auth/registration/`, {
                 username,
                 email,
                 firstname,

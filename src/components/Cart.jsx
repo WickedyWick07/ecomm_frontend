@@ -31,7 +31,7 @@ const Cart = () => {
 
    const totalPriceCalc = async () => {
         try {
-            const totalResponse = await api.get('/cart/total_price/', {
+            const totalResponse = await api.get('api/cart/total_price/', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -44,7 +44,7 @@ const Cart = () => {
 
     const handleRemoveFromCart = async (itemId) => {
         try {
-                await api.delete(`/cart/remove/${itemId}/`,{
+                await api.delete(`api/cart/remove/${itemId}/`,{
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 },
@@ -61,7 +61,7 @@ const Cart = () => {
     const handleQuantityChange = async (itemId, newQuantity) => {
         try {
             const response = await api.patch(
-                `/cart/update/${itemId}/`,
+                `api/cart/update/${itemId}/`,
                 {quantity: newQuantity},
                 {headers: {
                     Authorization: `Bearer ${token}`,
