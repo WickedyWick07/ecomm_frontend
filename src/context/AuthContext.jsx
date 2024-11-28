@@ -58,7 +58,7 @@ const AuthProvider = ({ children }) => {
   
   const fetchUser = async () => {
     try {
-      const response = await api.get('/auth/user/');
+      const response = await api.get('api/auth/user/');
       setUser(response.data);
     } catch (error) {
       console.error('Error fetching user data', error);
