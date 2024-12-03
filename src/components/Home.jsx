@@ -19,19 +19,6 @@ function Home() {
                 const response = await axios.get(`${API_URL}/api/products/`);
                 console.log(response.data);
                 setFeaturedProducts(response.data.results);
-
-                // Fetch images for each product after the products are fetched
-                const imageFetches = response.data.results.map(product =>
-                    axios.get(`${API_URL}/product-image/${product.id}`)
-                        .then(res => ({
-                            productId: product.id,
-                            imageUrl: res.data.imageUrl, // Assuming image data is in `imageUrl` property
-                        }))
-                );
-
-                // Wait for all image fetches to complete
-                const imageResponses = await Promise.all(imageFetches);
-                setProductImages(imageResponses);
             } catch (error) {
                 console.log('Error fetching products or images', error);
             }
@@ -39,12 +26,6 @@ function Home() {
 
         fetchProducts();
     }, []);
-
-    // Combine product data with their respective images
-    const getProductImage = (productId) => {
-        const image = productImages.find(img => img.productId === productId);
-        return image ? image.imageUrl : '';
-    };
 
     const handleLogout = () => {
         logout();
