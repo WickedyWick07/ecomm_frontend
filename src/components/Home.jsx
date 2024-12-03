@@ -107,7 +107,7 @@ function Home() {
                             featuredProducts.map(product => (
                                 <div key={product.id} className="product-card">
                                     <img 
-                                        src={`${API_URL}media${getProductImage(product.id)}`}
+                                        src={product.image}
                                         alt={product.name} 
                                         style={{
                                             width: '100%',
