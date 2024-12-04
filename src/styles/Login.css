@@ -1,4 +1,5 @@
 .form-container {
+    color: #000;
     max-width: 300px;
     margin: auto;
     padding: 20px;
@@ -11,6 +12,7 @@
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
+    color: #000;
 }
 
 .form-container button {
