@@ -246,7 +246,7 @@ function Checkout() {
         setShowModal(false);
         setError('');
         try {
-            const response = await api.post('process-payment/', {
+            const response = await api.post('api/process-payment/', {
                 payment_method: 'card',
                 cardDetails,
                 amount: calculateTotal()
