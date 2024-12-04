@@ -88,7 +88,7 @@ function Home() {
                             featuredProducts.map(product => (
                                 <div key={product.id} className="product-card">
                                     <img 
-                                        src={`https://ecomm-backend-ccrd.onrender.com${product.image}`}
+                                        src={product.image}
                                         alt={product.name} 
                                         style={{
                                             width: '100%',
