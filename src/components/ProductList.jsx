@@ -173,8 +173,8 @@ const ProductList = () => {
                             <h2>{product.name}</h2>
                             {product.image && (
                                 <img
-                                    src={product.image}
-                                    alt={product.name}
+                                src={`https://ecomm-backend-ccrd.onrender.com/${product.image}`}
+                                alt={product.name}
                                 />
                             )}
                             <p>{product.description}</p>
