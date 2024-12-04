@@ -136,7 +136,7 @@ const Cart = () => {
                                     {(item.product.image && <img
                                         alt={item.product.name}
                                         height='200px' width='200px'
-                                        src={`http://localhost:8000${item.product.image}`}
+                                        src={item.product.image}
                                     />)}
                                 </div>
                                 <div className="cart__item-details">
