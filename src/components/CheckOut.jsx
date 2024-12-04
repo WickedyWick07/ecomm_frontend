@@ -334,7 +334,7 @@ function Checkout() {
                                 alt={item.product.name}
                                 height='200px'
                                 width='200px'
-                                src={`${import.meta.env.VITE_API_URL}${item.product.image}`}
+                                src={item.product.image}
                             />
                         )}
                         <p>Price: ${item.product.price}</p>

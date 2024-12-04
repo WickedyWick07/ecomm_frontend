@@ -73,7 +73,7 @@ function ProductDetail() {
           {product.image && (
             <img
               className="product__image"
-              src={`${import.meta.env.VITE_API_URL}/${product.image}`}
+              src={product.image}
               alt={product.name}
             />
           )}

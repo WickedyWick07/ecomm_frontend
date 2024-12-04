@@ -19,7 +19,7 @@ export const CartProvider = ({ children}) => {
 
     const fetchCart = async () => {
         try {
-            const response = await api.get('cart/', {
+            const response = await api.get('api/cart/', {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 },
@@ -33,7 +33,7 @@ export const CartProvider = ({ children}) => {
     const addToCart = async (productId, quantity = 1) => {
         try {
             const response = await api.post(
-                'cart/add/', 
+                'api/cart/add/', 
                 {product_id: productId, quantity},
                 {headers: {
                     'Authorization': `Bearer ${token}`,
@@ -49,7 +49,7 @@ export const CartProvider = ({ children}) => {
 
     const removeFromCart = async (itemId) => {
         try {
-            await api.delete(`cart/remove/${itemId}`, {
+            await api.delete(`api/cart/remove/${itemId}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 }
