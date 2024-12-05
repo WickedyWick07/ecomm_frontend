@@ -38,29 +38,42 @@ function Home() {
                     <header>
                         {user ? <h2>Welcome to ecommerce store, {user.username}</h2> : <h2>Welcome to ecommerce store, Guest</h2>}
                         <div className="nav__container">
-                            <nav className='nav'>
-                                {user ? (
-                                    <ul>
-                                        <li>
-                                            <a className='nav-link' id="navi-link" href='/products'>Go to Products</a>
-                                            <a className='nav-link' id="navi-link" href='/cart'>Go to Cart</a>
-                                            <button onClick={handleLogout}>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-door-closed-fill" viewBox="0 0 16 16">
-                                                    <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
-                                                </svg>
-                                                Log out
-                                            </button>
-                                        </li>
-                                    </ul>
-                                ) : (
-                                    <ul>
-                                        <li>
-                                            <a className='nav-link' href='/login'>Go to Login</a>
-                                            <a className='nav-link' href='/signup'>Go to Signup</a>
-                                        </li>
-                                    </ul>
-                                )}
-                            </nav>
+                        <nav className="nav">
+  {user ? (
+    <ul className="nav-list">
+      <li className="nav-item">
+        <a className="nav-link" href="/products">
+          <i className="fas fa-boxes"></i> Products
+        </a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link" href="/cart">
+          <i className="fas fa-shopping-cart"></i> Cart
+        </a>
+      </li>
+      <li className="nav-item">
+        <button onClick={handleLogout} className="nav-link logout-button">
+          <i className="fas fa-door-closed"></i> Log out
+        </button>
+      </li>
+    </ul>
+  ) : (
+    <ul className="nav-list">
+      <li className="nav-item">
+        <a className="nav-link" href="/login">
+          <i className="fas fa-sign-in-alt"></i> Login
+        </a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link" href="/signup">
+          <i className="fas fa-user-plus"></i> Signup
+        </a>
+      </li>
+    </ul>
+  )}
+</nav>
+
+
                         </div>
                     </header>
                 </div>
@@ -90,11 +103,7 @@ function Home() {
                                     <img 
                                         src={product.image}
                                         alt={product.name} 
-                                        style={{
-                                            width: '100%',
-                                            height: '200px',
-                                            objectFit: 'cover'
-                                        }}
+                                       
                                     />
                                     <h3>{product.name}</h3>
                                     <p>${product.price}</p>
@@ -105,32 +114,41 @@ function Home() {
                         )}
                     </div>
                 </section>
-
-                <section className="why-shop-with-us">
-                    <h2>Why Shop With Us</h2>
-                    <div className="reasons-grid">
-                        <div className="reason-item">
-                            <i className="fas fa-truck"></i>
-                            <h3>Free Shipping</h3>
-                            <p>On orders over $50</p>
-                        </div>
-                        <div className="reason-item">
-                            <i className="fas fa-undo"></i>
-                            <h3>Easy Returns</h3>
-                            <p>30-day return policy</p>
-                        </div>
-                        <div className="reason-item">
-                            <i className="fas fa-lock"></i>
-                            <h3>Secure Payment</h3>
-                            <p>100% secure checkout</p>
-                        </div>
-                        <div className="reason-item">
-                            <i className="fas fa-headset"></i>
-                            <h3>24/7 Support</h3>
-                            <p>Round-the-clock assistance</p>
-                        </div>
-                    </div>
-                </section>
+                <section className="why-shop-with-us"> 
+    <h2>Why Shop With Us</h2> 
+    <div className="reasons-grid"> 
+        <div className="reason-item"> 
+            <i className="fas fa-truck"></i> 
+            <h3>Free Shipping</h3> 
+            <p>On orders over $50</p> 
+        </div> 
+        <div className="reason-item"> 
+            <i className="fas fa-undo"></i> 
+            <h3>Easy Returns</h3> 
+            <p>30-day return policy</p> 
+        </div> 
+        <div className="reason-item"> 
+            <i className="fas fa-lock"></i> 
+            <h3>Secure Payment</h3> 
+            <p>100% secure checkout</p> 
+        </div> 
+        <div className="reason-item"> 
+            <i className="fas fa-headset"></i> 
+            <h3>24/7 Support</h3> 
+            <p>Round-the-clock assistance</p> 
+        </div>
+        <div className="reason-item"> 
+            <i className="fas fa-tags"></i> 
+            <h3>Best Price Guarantee</h3> 
+            <p>Lowest prices or price match</p> 
+        </div>
+        <div className="reason-item"> 
+            <i className="fas fa-gift"></i> 
+            <h3>Loyalty Rewards</h3> 
+            <p>Earn points on every purchase</p> 
+        </div>
+    </div> 
+</section>
             </div>
         </>
     );

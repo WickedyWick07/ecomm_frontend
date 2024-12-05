@@ -20,16 +20,14 @@ const ProductList = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const navigate = useNavigate();
 
-    const fetchProducts = async () => {
+    const fetchProducts = async (url = `${import.meta.env.VITE_API_URL}/api/products`) => {
         setLoading(true);
-        setIsSearching(false);
         try {
-            const response = await api.get(`${import.meta.env.VITE_API_URL}/api/products`, {
+            const response = await api.get(url, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 },
             });
-            console.log('Response data:', response.data);
             setProducts(response.data.results);
             setNextPage(response.data.links.next);
             setPrevPage(response.data.links.previous);
@@ -72,7 +70,7 @@ const ProductList = () => {
         setIsSearching(true);
         setLoading(true);
         try {
-            const response = await api.get(`products?search=${query}`, {
+            const response = await api.get(`api/products?search=${query}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 },
@@ -175,6 +173,7 @@ const ProductList = () => {
                                 <img
                                 src={product.image}
                                 alt={product.name}
+                              
                                 />
                             )}
                             <p>{product.description}</p>
